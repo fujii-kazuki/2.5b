@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>今<%= type %>の投稿数</th>
+      <th>前<%= type %>の投稿数</th>
+      <th>前<%= type %>比</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% if books1.count == 0 %>
+        <td>0</td>
+        <td><%= books2.count %></td>
+        <td>0%</td>
+      <% elsif books2.count == 0 %>
+        <td><%= books1.count %></td>
+        <td>0</td>
+        <td>前<%= type %>の投稿はなし</td>
+      <% else %>
+        <td><%= books1.count %></td>
+        <td><%= books2.count %></td>
+        <td><%= (books1.count / books2.count * 100).round %>%</td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
