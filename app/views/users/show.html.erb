@@ -8,7 +8,11 @@
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
-      <%= render 'books/index',books: @books %>
+      <%= render 'books/index', books: @books %>
+
+      <h2>投稿数の前日比・前週比</h2>
+      <%= render 'books/compare', type: '日', books1: @today_books, books2: @yesterday_books %>
+      <%= render 'books/compare', type: '週', books1: @this_week_books, books2: @last_week_books %>
     </div>
   </div>
 </div>
