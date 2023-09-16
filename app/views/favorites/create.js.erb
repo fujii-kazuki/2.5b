@@ -1,0 +1,2 @@
+<!--下記escape_javascriptメソッドは、j(render 'favorites/favorite-btn', book: @book)と書いてもOK-->
+$(".favorite-btn-<%= @book.id %>").html("<%= escape_javascript(render partial: 'favorites/favorite-btn', locals: {book: @book}) %>");
