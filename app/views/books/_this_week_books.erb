@@ -13,16 +13,7 @@
   <tbody>
     <tr>
       <% 7.times do |i| %>
-        <% if -i + 6 > 1 %>
-          <!--6~2日前-->
-          <td><%= books.send("created_#{-i + 6}day_ago").count %></td>
-        <% elsif -i + 6 > 0 %>
-          <!--昨日-->
-          <td><%= books.created_yesterday.count %></td>
-        <% else %>
-          <!--今日-->
-          <td><%= books.created_today.count %></td>
-        <% end %>
+        <td><%= books.created_days_ago(-i + 6).count %></td>
       <% end %>
     </tr>
   </tbody>
