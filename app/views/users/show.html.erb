@@ -11,8 +11,8 @@
       <%= render 'books/index', books: @books %>
 
       <h2>投稿数の前日比・前週比</h2>
-      <%= render 'books/compare', type: '日', books1: @today_books, books2: @yesterday_books %>
-      <%= render 'books/compare', type: '週', books1: @this_week_books, books2: @last_week_books %>
+      <%= render 'books/compare', type: '日', books1: @books.created_today, books2: @books.created_yesterday %>
+      <%= render 'books/compare', type: '週', books1: @books.created_this_week, books2: @books.created_last_week %>
     </div>
   </div>
 </div>
