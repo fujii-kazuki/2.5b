@@ -13,6 +13,9 @@
       <h2>投稿数の前日比・前週比</h2>
       <%= render 'books/compare', type: '日', books1: @books.created_today, books2: @books.created_yesterday %>
       <%= render 'books/compare', type: '週', books1: @books.created_this_week, books2: @books.created_last_week %>
+
+      <h3>7日間分の投稿数</h3>
+      <%= render 'books/this_week_books', books: @books %>
     </div>
   </div>
 </div>
