@@ -1,0 +1,18 @@
+<% if books.count == 0 %>
+  日付を選択してください
+<% else %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>投稿数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= books.count %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
