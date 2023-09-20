@@ -25,14 +25,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
+  def daily_posts
     @user = User.find(params[:user_id])
-    @books = @user.books
     if params[:created_at] == ""
-      @search_books = []
+      @books = []
     else
-      @search_books = @books.where('created_at like ?', "#{params[:created_at]}%")
+      # @books = @user.books.where('created_at like ?', "#{params[:created_at]}%")
+
+      # 以下解答の記述方法
+      @books = @user.books.where(created_at: params[:created_at].to_date.all_day)
     end
+    render :daily_posts_result
   end
 
   private

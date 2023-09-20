@@ -1,4 +1,3 @@
-import "jquery"
 import Chart from 'chart.js/auto';
 
 $(document).on('turbolinks:load', function() {

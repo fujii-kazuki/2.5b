@@ -18,3 +18,9 @@
     </tr>
   </tbody>
 </table>
+
+<canvas id="booksChart"
+<% (0..6).each do |n| %>
+  <%= "data-created-#{n}day-ago-books-count=#{@books.created_days_ago(n).count}" %>
+<% end %> class="mb-5">
+</canvas>
